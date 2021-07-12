@@ -1,0 +1,7 @@
+insert
+
+create
+
+update
+
+delete
