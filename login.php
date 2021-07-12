@@ -44,16 +44,20 @@ $array = [
     'count_of_clicks' => $count_of_clicks,
     'yyyy_mm_dd_click' => $yyyy_mm_dd_click
 ];
-$createtable = "";;
 
-$query1 = " ";
-$query2 = " ";
-$query3 = " ";
-$query4 = " ";
+$createtable = "";
 
-$connection->query();
+$query1 = "sql query";
+$query2 = "sql query";
+$query3 = "sql query";
+$query4 = "sql query";
 
-array_diff_assoc()d;
+$connection->query($query1);
+$connection->query($query2);
+$connection->query($query3);
+$connection->query($query4);
+
+array_diff_assoc();
 
 
 $connection->
