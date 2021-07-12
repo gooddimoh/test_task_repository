@@ -60,17 +60,15 @@ $connection->query($query4);
 array_diff_assoc();
 
 
-$connection->
-
 in_array('');;
-in_
+
 
 $array['user_ip'];
 $array['date_time'];
 $array['button_id'];
 $array['year'];
 
-$insert = ""
+$insert = "";
 $remote_addr = $_SERVER['REMOTE_ADDR'];
 
 var_dump($remote_addr);
