@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect('localhost', 'root', 'root', 'test_task', '3306', '',);
+$connection = mysqli_connect('localhost', 'root', 'root', 'test_task', '3306');
 
 $user_ip = $_GET['user_ip'];
 $date_time = $_GET['date_time'];
@@ -26,10 +26,10 @@ $array = [
 $createtable = "";
 $create = "CREATE TABLE IF NOT EXISTS tasks ( task_id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, start_date DATE, due_date DATE, status TINYINT NOT NULL, priority TINYINT NOT NULL, description TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP )  ENGINE=INNODB";
 
-$query1 = "sql query";
-$query2 = "sql query";
-$query3 = "sql query";
-$query4 = "sql query";
+$query1 = "CREATE sql query";
+$query2 = "CREATE sql query";
+$query3 = "CREATE sql query";
+$query4 = "CREATE sql query";
 
 $connection->query($create);
 $connection->query($query1);
@@ -94,6 +94,16 @@ function writelog(){ }
 get_client_ip();
 yyyy_mm_dd_click();
 writelog();
+
+$_COOKIE['name'];
+$_COOKIE['password'];
+$_COOKIE['data1'];
+$_COOKIE['data2'];
+
+$_SESSION['name'];
+$_SESSION['password'];
+$_SESSION['data1'];
+$_SESSION['data2'];
 
 ?>
 
