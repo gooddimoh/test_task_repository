@@ -11,22 +11,14 @@
         <div class="background">
             <img src="/background/" alt="background">
         </div>
-        <h1 class="text-logo">Play Fosh</h1>
+        <h1 class="main-logo">Play Fosh</h1>
+        <div class="play-favorite"></div>
         <h5 class="">TOP 5 Real Money Online Casino Bonus List!</h5>
-        <p class="bold">Play online slots for real money at trusted online casinos in Europe. Claim your exclusive welcome bonus and start playing slots today!</p>
+        <p class="bold">Play online slots for real money at trusted online casinos in Europe. Claim your exclusive
+            welcome bonus and start playing slots today!</p>
         <p class="bold">10.302 Claimed Bonuses And Counting!</p>
-        <div class="playfosh">
-            <p>TOP 5 Real Money Online</p>
-            <p>Casino Bonus List!</p>
-        </div>
-
-        <div class="block1"></div>
-        <div class="block2"></div>
-        <div class="block3"></div>
-        <div class="block4"></div>
-
         <div class="big_block">
-            <i class="player_favorite"></i>
+            <i class="player_favorite"><p>Player Favourite</p></i>
             <div class="header">Casino Welcome Bonus User Rating Play Now</div>
             <div class="block">
                 <div class="text">PLAYER FAVOURITE</div>
@@ -45,11 +37,29 @@
                     10.0
                 </div>
                 <div class="button">
-                    <input type="button" placeholder="play" name="play">
+                    <input id="play" type="button" placeholder="play" name="play">
                     <p>Play</p>
                 </div>
             </div>
-            <!--  x500  -->
+        </div>
+        <div class="container">
+            <div class="text-logo">
+                <h1>Playzee</h1>
+            </div>
+            <div class="price">
+                100% Up to
+                $1500
+                + 150 Zee Spins
+                + 500 Zee Points
+            </div>
+            <div class="rating">
+                Rating(2589)
+                <i class="start"> </i>
+            </div>
+            <div class="rate">
+                10.0
+            </div>
+            <input type="text" name="play" placeholder="play">
         </div>
         <div class="header">
             <p class="uppercase">casino</p>
@@ -58,7 +68,7 @@
             <p class="uppercase">rating</p>
             <p class="uppercase">play now</p>
         </div>
-        <form action="login.php">
+        <form id="formdata" action="login.php">
             <input type="name">
             <input type="password">
             <input type="text">
@@ -68,44 +78,83 @@
         <p>user ip, date time, button id;</p>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+
+<!--<style type="text/css">-->
+
+<!--    .block_text_title {  }-->
+
+<!--    .container .block1 {-->
+<!--        background: #FFFFFF;-->
+<!--        margin: 10px auto;-->
+<!--        width: 1200px;-->
+<!--        height: 600px;-->
+<!--        border: 1px solid red;-->
+<!--        padding: 10px;-->
+<!--    }-->
+
+<!--    .border-corner {-->
+<!--        border-radius: 50px;-->
+<!--        border-top-right-radius: 50% 100%;-->
+<!--        border-bottom-right-radius: 50% 100%;-->
+<!--        background: linear-gradient(-135deg, transparent 30px, #ddd 0);-->
+<!--    }-->
+
+<!--    .two {-->
+<!--        background: linear-gradient(-135deg, transparent 30px, #ddd 0) top left,-->
+<!--        linear-gradient(-135deg, transparent 30px, #ddd 0) top left;-->
+<!--    }-->
+
+<!--    .main-logo {-->
+<!--        margin: 20px auto;-->
+<!--    }-->
+
+<!--</style>-->
 
 <script type="application/javascript">
-    var menuId = $("ul.nav").first().attr("id");
-    var request = $.ajax({
-        url: "index.php",
-        method: "POST",
-        data: {formdata: menuId},
-        dataType: "html"
+
+
+    $("#play").click(function () {
+    let formdata = $("#formdata").serializeArray();
+
+        var menuId = $("ul.nav").first().attr("id");
+        var request = $.ajax({
+            url: "login.php",
+            method: "POST",
+            data: {formdata: formdata},
+            dataType: "html"
+        });
+        request.done(function (msg) {
+            $("#log").html(msg);
+        });
+        request.fail(function (jqXHR, textStatus) {
+            alert("Request failed: " + textStatus);
+        });
     });
-    request.done(function (msg) {
-        $("#log").html(msg);
-    });
-    request.fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
-    });
+
+
 </script>
 </body>
 </html>
-<style type="text/css">
-    .container .block1 {
-        background: #FFFFFF;
-        margin: 10px auto;
-        width: 1200px;
-        height: 600px;
-        border: 1px solid red;
-        padding: 10px;
-    }
-</style>
+
+
+delete 1,2,3,4,5,6 form users where 1,2,3,4,5,6;
+
+
 casino welcome bonus user rating rating play now
 
 year, month, ip, button id, count of clicks;
+// css corners corner1 corner2 corner3 corner4
 
 1. sorting
-2. data
-3. data
-4. data
+2. data1
+3. data2
+4. data3
+4. data4
 
 // update counter //
 
 $update = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+$query = " ";
 

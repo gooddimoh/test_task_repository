@@ -24,7 +24,37 @@ $array = [
 ];
 
 $createtable = "";
-$create = "CREATE TABLE IF NOT EXISTS tasks ( task_id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, start_date DATE, due_date DATE, status TINYINT NOT NULL, priority TINYINT NOT NULL, description TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP )  ENGINE=INNODB";
+
+$create = "CREATE TABLE IF NOT EXISTS user 
+            ( task_id INT AUTO_INCREMENT PRIMARY KEY,
+              title VARCHAR(255) NOT NULL,
+              ip DATE,
+              date_time DATE,
+              status TINYINT NOT NULL,
+              priority TINYINT NOT NULL,
+              description TEXT,
+              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP )  ENGINE=INNODB";
+$create = "CREATE TABLE IF NOT EXISTS log 
+            ( id INT AUTO_INCREMENT PRIMARY KEY,
+              title VARCHAR(255) NOT NULL,
+              ip DATE,
+              date_time DATE,
+              status TINYINT NOT NULL,
+              priority TINYINT NOT NULL,
+              description TEXT,
+              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP )  ENGINE=INNODB";
+
+
+$_COOKIE['name'] = $_GET['name'];
+$_COOKIE['password'] = $_GET['password'];
+$_COOKIE['data1'] = $_GET['data1'];
+$_COOKIE['data2'] = $_GET['data2'];
+
+$_SESSION['name'] = $_GET['name'];
+$_SESSION['password'] = $_GET['password'];
+$_SESSION['data1'] = $_GET['data1'];
+$_SESSION['data2'] = $_GET['data2'];
+
 
 $query1 = "CREATE sql query";
 $query2 = "CREATE sql query";
@@ -35,7 +65,8 @@ $connection->query($create);
 $connection->query($query1);
 $connection->query($query2);
 $connection->query($query3);
-$connection->query($query4);
+//Query Select
+$connection->query($query4)->;
 
 $array['user_ip'];
 $array['date_time'];
@@ -62,12 +93,11 @@ var_dump($_COOKIE);
 //log3
 //log4
 
-function yyyy_mm_dd_click()
-{
+function yyyy_mm_dd_click() {
     return 'yyyy_mm_dd_click';
 }
-function get_client_ip()
-{
+
+function get_client_ip() {
     $ipaddress = '';
     if (isset($_SERVER['HTTP_CLIENT_IP']))
         $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
@@ -87,39 +117,12 @@ function get_client_ip()
         $ipaddress = 'UNKNOWN';
     return $ipaddress;
 }
-function writelog(){ }
 
-
+function writelog() {
+    file_get_contents(__FILE__ . '/data/');
+}
 
 get_client_ip();
 yyyy_mm_dd_click();
 writelog();
 
-$_COOKIE['name'];
-$_COOKIE['password'];
-$_COOKIE['data1'];
-$_COOKIE['data2'];
-
-$_SESSION['name'];
-$_SESSION['password'];
-$_SESSION['data1'];
-$_SESSION['data2'];
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form action="">
-    <input type="text" name="user_ip">
-    <input type="text" name="date_time">
-    <input type="text" name="button_id">
-    <input type="text" name="yyyy_mm_dd_click">
-    <input type="text" name="update">
-</form>
-</body>
-</html>
